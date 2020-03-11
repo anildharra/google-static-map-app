@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: auto;
+    
+}
+
+ 
+.App-header {
+  background-color: #282c34;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  margin:6px;
+  padding:6px;
+
+}
+input-range__label input-range__label--min {
+  visibility:hidden;
+
+}
+
+ input-range__label input-range__label--max{
+  visibility:hidden;
+
+}
+
