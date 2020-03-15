@@ -1,6 +1,7 @@
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+//import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -10,3 +11,24 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import promiseMiddleware from 'redux-promise';
+import Routes from './routes';
+
+
+import reducers from './reducers'
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
+
+ReactDOM.render(
+        <Provider store={createStoreWithMiddleware(reducers)}>
+            <BrowserRouter>
+                <Routes/>
+            </BrowserRouter>
+        </Provider>
+    , document.getElementById('root'));
